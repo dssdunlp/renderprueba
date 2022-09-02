@@ -1,0 +1,25 @@
+FROM python:3
+
+WORKDIR /src/app
+
+COPY requirements.txt ./
+
+#se copia el contenido del archivo app.py como ejemplo, a la carpeta /src/example
+
+RUN mkdir -p /src/example
+
+COPY app.py /src/example
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+#EXPOSE 5000
+WORKDIR /src/example
+
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+ENV FLASK_APP=app.py
+ENV PORT=5000
+EXPOSE 5000
+
+#para correr el contenedor desde el directorio local con el archivo app.py ejecutamos la siguiente línea
+
+#docker run -d -p 5000:5000 -v $(pwd):/src/app --name nombreImagen dockerpython
