@@ -17,8 +17,8 @@ WORKDIR /src/example
 
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
 ENV FLASK_APP=app.py
-ENV PORT=5000
-EXPOSE 5000
+ENV PORT=8000
+EXPOSE 8000
 
 #para correr el contenedor desde el directorio local con el archivo app.py ejecutamos la siguiente línea
 
