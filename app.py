@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     args=request.args
     param1=args["name"] 
-    return "Hola,ESTO ES UNA PRUEBA PARA DSSD DE: "+ param1
+    return "Hola2,ESTO ES UNA PRUEBA PARA DSSD DE: "+ param1
 
 port = int(os.environ.get("PORT", 8000)) 
 app.run(host='0.0.0.0', port=port) 
